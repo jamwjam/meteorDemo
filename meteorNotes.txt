@@ -1,0 +1,17 @@
+2. Database everywhere
+	MongoDB
+		-Meteor comes in it by default
+		-Works both server and client
+			-On server, works as you might expect it to
+			 but database on client is more pseudo database
+		-API written to mimic Mongo API
+			-for a custom database that is cached in memory
+			 of client
+			-Allows you to send subsets of data,
+			 to "Publish" the info you want
+				-If you only want the user to have access
+				 to certain rows
+				-If you don't want to send that password
+				 columns
+			-
+
