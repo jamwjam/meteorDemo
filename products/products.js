@@ -1,17 +1,11 @@
+var Products = new Meteor.Collection("Products");
+
+
 if (Meteor.isClient) {
-  var Products = new Array(
-        { Name    :  "Screw Driver",
-          Price   :  "1.50",
-          InStock :  true },
-           
-        { Name    :  "Hammer",
-          Price   :  "3.00",
-          InStock :  false }
-  );
-   
   Template.Products.ProductArr = function(){
-     return Products;
-  };
+   return Products.find({}, {sort: {Name: 1}});
+};
+
   Template.Products.events = {
     "click .Product" : function(){
       if(this.InStock)

@@ -13,5 +13,9 @@
 				 to certain rows
 				-If you don't want to send that password
 				 columns
-			-
+		-By putting db on the client, you can feed the db
+		 right into HTML page.
+		-
 
+
+http://net.tutsplus.com/tutorials/javascript-ajax/whats-this-meteor-thing/
