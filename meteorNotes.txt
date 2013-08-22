@@ -15,7 +15,18 @@
 				 columns
 		-By putting db on the client, you can feed the db
 		 right into HTML page.
-		-
-
+3. Setting up a More Complex App
+   Meteroite
+	-Community created wrapper for Meteor
+	-Allows us to use non-core pacages created by other members of meteor
+	 community
+		-Way to work around limitation and to publish packages on
+		 Atmosphere, the Meteor package repository.
+	Step 1. Install packages
+	     npm install Metorite -g
+	     (note need to have a copy of Node and npm installed on your system)
 
 http://net.tutsplus.com/tutorials/javascript-ajax/whats-this-meteor-thing/
+http://net.tutsplus.com/tutorials/javascript-ajax/prototyping-with-meteor/
+http://stackoverflow.com/questions/8191459/how-to-update-node-js-npm-and-all-other-dependencies
+om/creationix/nvm
