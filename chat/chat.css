@@ -6,3 +6,8 @@ body {
 input#messageBox{
 	width: 400px;
 }
+.commentDash!{
+    border:2px solid yellow;
+    background-color: yellow;
+    margin: 4px;
+}

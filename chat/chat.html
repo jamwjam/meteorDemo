@@ -3,23 +3,30 @@
 </head>
 
 <body>
-	{{> entry}}
-	{{> messages}}
+  {{> cool_dude}}
+  {{> entry}}
+  {{> messages}}
 </body>
 
 <template name="entry">
-	<p>
-		<input type="text" id="name" placeholder="Your Name">
-		<input type="text" id="messageBox" placeholder="Your Message">
-	</p>
+    <p>
+      <input type="text" id="name" placeholder="Your Name">
+      <input type="text" id="messageBox" placeholder="Your Message">
+    </p>
 </template>
 
 <template name="messages">
-	{{#each messages}}
-		{{> message}}
-	{{/each}}
+  {{#each messages}}
+    <div class="commentDash">
+    {{> message}}
+    </div>
+  {{/each}}
 </template>
 
 <template name="message">
-	<p><strong>{{name}}</strong> {{message}}</p>
+	<p>&nbsp<strong>{{name}}</strong>:{{message}}</p>
+</template>
+
+<template name="cool_dude">
+  <p class="important">{{username}} sure is one cool dude!</p>
 </template>

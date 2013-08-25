@@ -1,14 +1,8 @@
 Messages = new Meteor.Collection('messages');
-User = new Meteor.Collection('users');
-
 if (Meteor.isClient) {
-  Meteor.subscribe("messages", "cool_people_channel");
-  Meteor.startup(function () {
-    var userName =prompt("Enter your name : ", "your name here");
-    Session.set("userName", userName);                               
-  });
 
   ////////// Helpers for in-place editing //////////
+  
   // Returns an event_map key for attaching "ok/cancel" events to
   // a text input (given by selector)
   var okcancel_events = function (selector) {
@@ -36,13 +30,6 @@ if (Meteor.isClient) {
     };
   };
 
-
-  if(Meteor.isServer) {
-    Meteor.publish("messages", function(channel_name) {
-        return Messages.find({channel: channel_name});
-    });
-  }
-
   Template.entry.events = {};
 
   Template.entry.events[okcancel_events('#messageBox')] = make_okcancel_handler({ok: function(text, event){
@@ -57,7 +44,4 @@ if (Meteor.isClient) {
   Template.messages.messages = function(){
     return Messages.find({}, {sort: {time: -1}});
   };
-  Template.cool_dude.username = function(){
-  return Session.get("userName");
-  }
 };
