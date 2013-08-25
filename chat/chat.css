@@ -4,15 +4,17 @@ div.maindash {
 	margin-right:auto;
 	width:50%;
 	height:500px;
-	border:5px dotted black;
+	border:5px solid black;
 	padding: 2%;
 	overflow: auto; 
 	overflow-x: hidden;
 	overflow-y: hidden;
+	border-radius: 5px;
 }
 
-div.inputbox {
+div.inputDash {
 	border:1px solid black;
+	border-radius: 6px;
 }
 
 html {
@@ -22,4 +24,10 @@ html {
 
 input:focus{
 	outline:none;
+}
+
+fieldset.messageDash {
+	border:1px solid black;
+	margin: 5px;
+	border-radius: 6px;
 }

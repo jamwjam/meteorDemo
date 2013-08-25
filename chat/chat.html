@@ -1,28 +1,41 @@
 <head>
-	<title>Chat app</title>
+	<title>JamesChat</title>
 </head>
 
 <body>
 	<div class="maindash">
 		{{> hello}}
 		{{> input}}
+		<br>
 		{{> messages}}
 	</div>
 </body>
 
 <template name="hello">
-	<h1>Chat for {{greeting}}</h1>
-	<p>Welcome my chat app! Please log in to show your username.</p>
+	<h1 style = "margin:0px;">Chat for {{greeting}}</h1>
+	<p>
+	<span>Welcome to my chat app!</span>
+	<br>
+	<span>Please log in to show your username.</span> 
+	</p>
 </template>
 
 <template name="messages">
 	{{#each messages}}
-	<div class="message" align={{getStatus name}}>
-		<strong id = {{name}}>{{name}}:<br></strong> {{message}}<br>
-	</div>
+		<fieldSet class="messageDash" >
+			<legend align={{getStatus name}}>
+				<strong>{{name}}</strong>
+			</legend>
+			{{message}}
+			<br>
+		</fieldSet>
 	{{/each}}
 </template>
 
 <template name="input">
-	<p>Message: <input type="text" id="message" style="border:none"></p>
+	<div class="inputDash">
+		&nbsp&nbsp
+		<strong>:</strong> 
+		<input type="text" id="message" style="border:none">
+	</div>
 </template>

@@ -3,6 +3,7 @@ Messages = new Meteor.Collection('messages');
 if (Meteor.isClient) {
   Meteor.startup(function() {
     var username = window.prompt("Input your identity","Enter your name here");
+    //var username = "James";
     Session.set("username", username);
   });
 
