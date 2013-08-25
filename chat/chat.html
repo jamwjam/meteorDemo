@@ -1,32 +1,26 @@
 <head>
-  <title>chat</title>
+	<title>Chat app</title>
 </head>
 
 <body>
-  {{> cool_dude}}
-  {{> entry}}
-  {{> messages}}
+	{{> hello}}
+	{{> input}}
+	{{> messages}}
 </body>
 
-<template name="entry">
-    <p>
-      <input type="text" id="name" placeholder="Your Name">
-      <input type="text" id="messageBox" placeholder="Your Message">
-    </p>
+<template name="hello">
+	<h1>{{greeting}}'s Chat room</h1>
+	<p>Welcome to the example chat app! Please log in to show your username.</p>.
 </template>
+
+
 
 <template name="messages">
-  {{#each messages}}
-    <div class="commentDash">
-    {{> message}}
-    </div>
-  {{/each}}
+	{{#each messages}}
+		<strong>{{name}}:</strong> {{message}} <br>
+	{{/each}}
 </template>
 
-<template name="message">
-	<p>&nbsp<strong>{{name}}</strong>:{{message}}</p>
-</template>
-
-<template name="cool_dude">
-  <p class="important">{{username}} sure is one cool dude!</p>
+<template name="input">
+	<p>Message: <input type="text" id="message"></p>
 </template>

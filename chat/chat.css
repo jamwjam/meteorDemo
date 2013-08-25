@@ -1,13 +1,1 @@
 /* CSS declarations go here */
-body {
-	font-family: Tahoma;
-	font-size: 13px;
-}
-input#messageBox{
-	width: 400px;
-}
-.commentDash!{
-    border:2px solid yellow;
-    background-color: yellow;
-    margin: 4px;
-}
