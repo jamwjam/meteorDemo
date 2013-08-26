@@ -1,11 +1,17 @@
 Messages = new Meteor.Collection('messages');
 User = new Meteor.Collection('users');
 
-if (Meteor.isClient) {
-  Meteor.subscribe("messages", "cool_people_channel");
+  if (Meteor.isClient) {
   Meteor.startup(function () {
-    var userName =prompt("Enter your name : ", "your name here");
-    Session.set("userName", userName);                               
+    var userName = prompt("Enter your name : ", "your name here");
+    Meteor.call("create_user", userName, function(error, user_id){
+      Session.set("user_id", user_id);
+    });                               
+  });
+
+  Session.set("current_channel", "cool_people_channel");
+  Meteor.autorun(function(){
+    Meteor.subscribe("messages", Session.get("current_channel"));
   });
 
   ////////// Helpers for in-place editing //////////
@@ -36,12 +42,19 @@ if (Meteor.isClient) {
     };
   };
 
-
   if(Meteor.isServer) {
     Meteor.publish("messages", function(channel_name) {
         return Messages.find({channel: channel_name});
     });
+    Meteor.methods({
+        create_user: function(username) {
+            console.log("CREATING dUSER");
+            var USER_id = Users.insert({name: username});
+            return user_id;
+        },
+    });
   }
+
 
   Template.entry.events = {};
 
@@ -58,6 +71,6 @@ if (Meteor.isClient) {
     return Messages.find({}, {sort: {time: -1}});
   };
   Template.cool_dude.username = function(){
-  return Session.get("userName");
+    return Session.get("user_id");
   }
 };
