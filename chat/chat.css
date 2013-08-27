@@ -11,11 +11,15 @@ div.maindash {
 	overflow-y: hidden;
 }
 
+div.inputbox {
+	border:1px solid black;
+}
+
 html {
 	padding : 10px;
 	font-family: Verdana, sans-serif;
 }
 
 input:focus{
-outline:none;
+	outline:none;
 }
