@@ -3,24 +3,26 @@
 </head>
 
 <body>
-	{{> hello}}
-	{{> input}}
-	{{> messages}}
+	<div class="maindash">
+		{{> hello}}
+		{{> input}}
+		{{> messages}}
+	</div>
 </body>
 
 <template name="hello">
-	<h1>{{greeting}}'s Chat room</h1>
-	<p>Welcome to the example chat app! Please log in to show your username.</p>.
+	<h1>Chat room for {{greeting}}</h1>
+	<p>Welcome my chat app! Please log in to show your username.</p>
 </template>
-
-
 
 <template name="messages">
 	{{#each messages}}
-		<strong>{{name}}:</strong> {{message}} <br>
+	<div class="message" align={{getStatus name}}>
+		<strong id = {{name}}>{{name}}:<br></strong> {{message}}<br>
+	</div>
 	{{/each}}
 </template>
 
 <template name="input">
-	<p>Message: <input type="text" id="message"></p>
+	<p>Message: <input type="text" id="message" style="border:none"></p>
 </template>

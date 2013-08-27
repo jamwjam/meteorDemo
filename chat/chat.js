@@ -31,6 +31,13 @@ if (Meteor.isClient) {
       }
     }
   }
+
+  Handlebars.registerHelper('getStatus', function(status){
+    if(status == Session.get("username"))
+      return 'left';
+     else
+      return 'right';
+  });
 }
 
 if (Meteor.isServer) {

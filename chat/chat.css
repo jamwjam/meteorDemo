@@ -1,1 +1,21 @@
 /* CSS declarations go here */
+div.maindash {
+	margin-left:auto;
+	margin-right:auto;
+	width:50%;
+	height:500px;
+	border:5px dotted black;
+	padding: 2%;
+	overflow: auto; 
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+html {
+	padding : 10px;
+	font-family: Verdana, sans-serif;
+}
+
+input:focus{
+outline:none;
+}
